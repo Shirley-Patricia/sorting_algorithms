@@ -18,8 +18,8 @@ void lomuto_partition(int *arr, int low, int high, int size)
 {
 	int pivot, lo, i;
 	int aux = 0;
-	
-	if (low < high) 
+
+	if (low < high)
 	{
 		pivot = high;
 		lo = low;
@@ -28,7 +28,7 @@ void lomuto_partition(int *arr, int low, int high, int size)
 		{
 			if (arr[i] < arr[pivot])
 			{
-				if(i != lo)
+				if (i != lo)
 				{
 					aux = arr[i];
 					arr[i] = arr[lo];
@@ -52,7 +52,8 @@ void lomuto_partition(int *arr, int low, int high, int size)
 /**
 * quick_sort - Function that sorts an array of integers in ascending order.
 *
-*@array: Array to be sorted.
+* @array: Array to be sorted.
+* @size: size of the array
 *
 * Return: Nothing
 **/
