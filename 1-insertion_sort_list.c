@@ -8,7 +8,8 @@
 **/
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *ap_list, *temp = NULL;
+	listint_t *ap_list;
+	listint_t *temp = NULL;
 
 	if (list == NULL)
 		return;
@@ -17,19 +18,44 @@ void insertion_sort_list(listint_t **list)
 
 	while (ap_list != NULL)
 	{
-		while (ap_list->next && (ap_list->n < ap_list->prev->n))
+		//while (ap_list->next && (ap_list->next->n < ap_list->prev->n))
+		//while (ap_list != NULL && ap_list->prev != NULL && (ap_list->n > ap_list->prev->n))
+		while (ap_list != NULL && ap_list->next && (ap_list->next->n < ap_list->n))
 		{
-			//ap_list->n = n;
-			ap_list->next = temp;
-			temp = temp->next;
-			//ap_list->prev->n = ap_list->next;
+			temp = ap_list->next;
 			ap_list->next = temp->next;
-			temp->prev = ap_list->next;
+			temp->prev = ap_list->prev;
 
-			ap_list = *list;
+			if (ap_list->prev != NULL)
+				ap_list->prev->next = temp;
+			
+			if (temp->next != NULL)
+				temp->next->prev = ap_list;
+
+			ap_list->prev = temp;
+			temp->next = ap_list;
+
+			if (temp->prev != NULL)
+			{
+				ap_list = temp->prev;
+			}
+			else 
+			{
+				*list = temp;
+			}
 
 			print_list(*list);
 		}
+		//ap_list->next = ap_list;
+		ap_list = ap_list->next;
+
 	}
-	
-}
+	//ap_list->next = ap_list;
+}//ap_list->n = n;
+			//ap_list->next = temp;
+			//temp = temp->next;
+			//ap_list->prev->n = ap_list->next;
+			//ap_list->next = temp->next;
+			//temp->prev = ap_list->next;
+
+			//ap_list = *list;
