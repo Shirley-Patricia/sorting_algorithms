@@ -16,7 +16,7 @@
 
 void lomuto_partition(int *arr, int low, int high, int size)
 {
-	int pivot, lo, i;
+	int pivot = 0, lo = 0, i = 0;
 	int aux = 0;
 
 	if (low < high)
