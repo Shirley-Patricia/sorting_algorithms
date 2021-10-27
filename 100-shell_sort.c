@@ -13,7 +13,7 @@ void shell_sort(int *array, size_t size)
 	size_t i, j, h;
 	int temp;
 
-	if (array == NULL || size == 0)
+	if (array == NULL || size < 2)
 		return;
 
 	h = 1;
