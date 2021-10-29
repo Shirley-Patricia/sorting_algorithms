@@ -21,6 +21,7 @@ void radix_sort(int *array, size_t size)
 	while (new != 0)
 	{
 		new = 0;
+		i = 1;
 		while (i < size)
 		{
 			if ((array[i - 1] % (n * 10)) / ((n * 10) / 10) > 0)
