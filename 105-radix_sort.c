@@ -12,7 +12,7 @@
 
 void radix_sort(int *array, size_t size)
 {
-	int new = 1, n = 100;
+	int new = 1, n = 10;
 	size_t i = 0;
 
 	if (array == NULL)
@@ -37,6 +37,6 @@ void radix_sort(int *array, size_t size)
 			i++;
 		}
 		print_array(array, size);
-		n *= 100;
+		n *= 10;
 	}
 }
