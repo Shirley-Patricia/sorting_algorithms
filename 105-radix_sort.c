@@ -15,7 +15,7 @@ void radix_sort(int *array, size_t size)
 	int new = 1, n = 10;
 	size_t i = 0;
 
-	if (array == NULL)
+	if (array == NULL || size == 1)
 		return;
 
 	while (new != 0)
